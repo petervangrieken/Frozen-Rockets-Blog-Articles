@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Frozen Rockets - freelance web design">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Adding ARIA landmark roles to my site</title>
+
+	<link rel="stylesheet" href="http://frozenrockets.nl/css/style.min.css">
+	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/7599872/689164/css/fonts.css" />
+	<link rel="shortcut icon" href="http://frozenrockets.nl/favicon.ico" type="image/x-icon">
+	<link rel="canonical" href="http://blog.frozenrockets.nl/adding-aria-to-this-site">
+</head>
+
+    <body class="page page--blog__article">
+
+    <header class="sidebar screen--article">
+
+  <a href="http://blog.frozenrockets.nl" class="borderless logo"><img src="http://frozenrockets.nl/images/fr-logo-mask.jpg" alt="Frozen Rockets" id="main-logo-image"></a>
+
+  <nav role="navigation">
+	  <ol class="mainnav">
+	    <li class="mainnav__item mainnav__item--secondary"><a href="http://frozenrockets.nl/projecten">Projecten</a></li>
+	    <li class="mainnav__item mainnav__item--secondary"><a href="http://frozenrockets.nl/over-frozen-rockets">Over Frozen Rockets</a></li>
+	    <li class="mainnav__item mainnav__item--secondary"><a href="/">Artikelen</a></li>
+	    <li class="mainnav__item mainnav__item--secondary"><a href="http://frozenrockets.nl/contact.php">Contact</a></li>
+	  </ol>
+  </nav>
+</header>
+
+     	<article>
+		<a href="/" class="font-small link--unstyled">&lsaquo; To Home</a>
+
+		<h1>Adding ARIA landmark roles to my site</h1>
+
+		<p>I recently launched my new website along with a new visual identity. I left some work to be done on purpose, so I could document these enhancements afterwards. This first step is to add WAI-ARIA roles to the site to further improve the usability for visitors who use assistive technologies.</p>
+
+<h2 id="but-first-what-is-wai-aria">But first, what is WAI-ARIA?</h2>
+
+<p>WAI-ARIA (which I’ll call ARIA from now on) is short for ‘Web Accessibility Initiative – Accessible Rich Internet Applications’. It is a set of attributes that can be added as a layer on top of HTML to provide extra information about the semantics of the site to screen readers and other assistive technologies. Among other things, ARIA enhances accessibility of interactive controls (such as drag and drop and sliders), provides roles for page structure (“landmarks” for navigation, search and main content) and areas for dynamic content (called “live regions” in ARIA).</p>
+
+<h2 id="about-adding-aria-roles">About adding ARIA roles</h2>
+
+<p>First of all, let’s start with <a href="http://www.w3.org/TR/aria-in-html/#first-rule-of-aria-use">the first rule of ARIA</a>: “The first rule of ARIA, is don’t use ARIA.”
+If you can use a native HTML element or attribute with the semantics and behaviour you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.</p>
+
+<p>So, that’s what I did, of course, and I hope everyone does.
+This site uses structural elements like &lt;header&gt; and &lt;main&gt; and it doesn’t have that many interactions. There’s a navigation menu, a contactform and some links, nothing really exiting. </p>
+
+<p>That’s why I’ll only focus on ARIA Landmarks in this article.</p>
+
+<h2 id="low-hanging-fruit">Low hanging fruit</h2>
+
+<p>This is what the site looks like now:</p>
+
+<p><img src="http://blog.frozenrockets.nl/assets/screenshot-frozenrockets-about.png" alt="Screenshot of the Frozen Rockets about page" /></p>
+
+<p>Let’s start with the quick wins. Since HTML5 provided us with new structural elements, there is some clear overlap between ARIA roles and native HTML.</p>
+
+<p>The <a href="http://html5doctor.com/the-main-element/"><code>&lt;main&gt;</code> element</a> is the main content of the page (for this page it would contain this article) and it should only be used once in a document. This directly maps to the <em>main</em>-role in ARIA and in the future you wouldn’t have to use this role if you use <code>&lt;main&gt;</code>, but because of the lack of support in Internet Explorer and some of the mobile browsers and to maximize compatibility, we’ll add it like this:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;main</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>Next up is the <em>sidebar</em>, which contains the logo, a large background image and a navigation menu. This sidebar is a <code>&lt;header&gt;</code> element and it’s site-oriented, rather than page-specific. The ARIA role to use for this is the <a href="http://www.w3.org/TR/wai-aria/roles#banner"><em>banner</em></a>, a banner usually appears at the top of the page and typically spans the full width, but in this case it sits next to the content (on desktop).</p>
+
+<p>Like the <em>main</em>-role, a banner should only mark one element in the document, so that makes it:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;header</span> <span class="na">role=</span><span class="s">&quot;banner&quot;</span> <span class="na">class=</span><span class="s">&quot;sidebar&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<h2 id="navigation">Navigation</h2>
+
+<p>Let’s look a the navigation now. There’s a navigation menu in the bottom-left corner and some links to deeper-lying pages. The bottom-left navigation is an obvious candidate for the <em>navigation</em>-role, which represents a collection of navigational elements (usually links) for navigating the document or related documents. It maps to the HTML <code>&lt;nav&gt;</code> element, so that makes it:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;nav</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;ol&gt;</span>
+		<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./projects&quot;</span><span class="nt">&gt;</span>Projects<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./about&quot;</span><span class="nt">&gt;</span>About Frozen Rockets<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://blog.frozenrockets.nl&quot;</span><span class="nt">&gt;</span>Articles<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+		<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;./contact.php&quot;</span><span class="nt">&gt;</span>Contact<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+	<span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/nav&gt;</span></code></pre></div>
+
+<p>The navigation landmark can be used more than once on a page, but don’t overdo it. Not any list of links is a navigation landmark, just like you probably wouldn’t wrap it in a <code>&lt;nav&gt;</code>-element. </p>
+
+<p>With these roles in place, the main structure of the pages is done.</p>
+
+<p><img src="http://blog.frozenrockets.nl/assets/screenshot-frozenrockets-about-aria-roles.png" alt="Screenshot of the Frozen Rockets about page with ARIA-roles in place" /></p>
+
+<h2 id="that-leaves-us-with">That leaves us with</h2>
+
+<p>With the low hanging fruit out of the way, there are still 4 other roles left to consider:</p>
+
+<ol>
+  <li>Contentinfo</li>
+  <li>Complementary</li>
+  <li>Form</li>
+  <li>Search</li>
+</ol>
+
+<h3 id="search">Search</h3>
+
+<p>I’ll start with the easy one: <em>Search</em> (role=search). As you probably guessed, this is for forms that let you search or filter the content on the site. There is nothing like that on the site, so I’ll skip that one.</p>
+
+<h3 id="contentinfo">Contentinfo</h3>
+
+<p>The spec says: “A large perceivable region that contains information about the parent document.Examples of information included in this region of the page are copyrights and links to privacy statements.”</p>
+
+<p>I don’t have a footer on the site that might contain this info, but there is <a href="http://frozenrockets.nl/credits">a page that I link to from the homepage with copyright information</a>. I’ll apply this role to the link on the homepage like this:</p>
+
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;./credits&quot;</span> <span class="na">role=</span><span class="s">&quot;contentinfo&quot;</span><span class="nt">&gt;</span>Credits<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+<h3 id="complementary">Complementary</h3>
+
+<p><a href="http://www.w3.org/TR/wai-aria/roles#complementary">According to the spec</a>, this is “a supporting section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.” Pretty much the same as the <code>&lt;aside&gt;</code> element.</p>
+
+<p>I don’t have anything like that on my site right now, so I can skip that.</p>
+
+<h3 id="form">Form</h3>
+
+<p>“A landmark region that contains a collection of items and objects that, as a whole, combine to create a form.” The most obvious thing to do is just add the role to any form on your site, but the semantics for this role already apply to the <code>&lt;form&gt;</code>-element, so that would be redundant. If (and you probably shouldn’t) you don’t use the native <code>&lt;form&gt;</code>-element for a form, this role would be applied to the containing <code>&lt;div&gt;</code>.</p>
+
+<h2 id="done">Done</h2>
+
+<p>With the ARIA-roles in place, I’ve made my website a bit more accessible. There is some work left for the contactform, which I’ll leave for a next article about ARIA states.</p>
+
+
+	</article>
+
+
+      </main>
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://frozenrockets.nl/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+
+</script>
+<noscript><p><img src="http://frozenrockets.nl/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+
+    </body>
+</html>

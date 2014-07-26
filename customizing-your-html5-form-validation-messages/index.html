@@ -7,12 +7,12 @@
 	<meta name="description" content="Frozen Rockets - freelance web design">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>The new face of Frozen Rockets</title>
+	<title>Customizing your HTML5 form validation messages</title>
 
 	<link rel="stylesheet" href="http://frozenrockets.nl/css/style.min.css">
 	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/7599872/689164/css/fonts.css" />
 	<link rel="shortcut icon" href="http://frozenrockets.nl/favicon.ico" type="image/x-icon">
-	<link rel="canonical" href="http://blog.frozenrockets.nl/the-new-face-of-frozen-rockets">
+	<link rel="canonical" href="http://blog.frozenrockets.nl/customizing-your-html5-form-validation-messages">
 </head>
 
     <body class="page page--blog__article">
@@ -34,19 +34,28 @@
      	<article>
 		<a href="/" class="font-small link--unstyled">&lsaquo; To Home</a>
 
-		<h1>The new face of Frozen Rockets</h1>
+		<h1>Customizing your HTML5 form validation messages</h1>
 
-		<p>I’m proud to finally present the new identity and website of Frozen Rockets. </p>
+		<p>Using the <em>title</em>-attribute for input-fields is, of course, recommended when you want to provide your visitors with some extra information besides the text in the &lt;label&gt;, something like ‘Please enter your full name’ would be a lot more useful and accessible than just asking for “Name”.</p>
 
-<p>A few months ago I asked my friend and awesome designer <a href="http://stephancsikos.nl">Stephan Csikós</a> to work on a new brand identity for me. I’m very pleased with the result he came up with. Seriously, if you need a great graphic designer or art director, hire him!</p>
+<p>I noticed not many people are aware of this extra feature of the title-attribute, but if you use the <em>title</em>-attribute, this text will also appear in the error message when you use HTML5 form validation (which you do use, right?).</p>
 
-<p>Based on his work, I designed this website, where I ‘practice what I preach’, so of course it’s completely keyboard-accessible and it conforms to <i>WCAG 2.0</i> (accessibility) standards without it being ‘boring’.</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;label&gt;</span>
+	Name
+	<span class="nt">&lt;input</span> <span class="na">required</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">title=</span><span class="s">&quot;Please enter your full name&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/label&gt;</span></code></pre></div>
 
-<h2 id="whats-next">What’s next?</h2>
+<p>Unfortunately, this doesn’t work in Firefox, but you can easily fix that with the non-standard x-moz-errormessage attribute:</p>
 
-<p>I’ll go into more details about some of the design choices and implementations on this site in more detail in some follow-up articles later, but if you like to look around, feel free to check out <a href="https://github.com/petervangrieken/Frozenrockets.nl-new">the source code on GitHub</a>. Also, if you run into any issues, <a href="./../contact.php">please let me know</a>.</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;label&gt;</span>
+	Name
+	<span class="nt">&lt;input</span> 	<span class="na">required</span> 
+		<span class="na">type=</span><span class="s">&quot;text&quot;</span> 
+		<span class="na">title=</span><span class="s">&quot;Please enter your full name&quot;</span> 
+		<span class="na">x-moz-errormessage=</span><span class="s">&quot;Please enter your full name&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/label&gt;</span></code></pre></div>
 
-<p>The great thing about the web is that it can be changed at any time, so I deliberately left some work to be done (like adding ARIA roles), which I’ll cover in upcoming articles on this site.</p>
+<p>This works across modern browsers (Chrome, Firefox, Opera and IE 10+), let’s hope Safari 8 joins the party this fall.</p>
 
 	</article>
 

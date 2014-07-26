@@ -1,10 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Frozen Rockets</title>
+    <title>Frozen Rockets Blog</title>
     <description>Frozen Rockets - freelance web design</description>
     <link>http://blog.frozenrockets.nl/</link>
     <atom:link href="http://blog.frozenrockets.nl/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Please stop doing this</title>
+        <description>&lt;p&gt;Please stop with: This is a 2 minute read. Scroll hijacking. Seemingly randomly arranged blocks with photos. “Hamburger”-icons. “Hamburger”-icons on desktopsites. “Hamburger”-icons with a popup to explain. Loooooooong single-page sites. Any single-page site. Full window parallax scrolling images.&lt;/p&gt;
+
+&lt;p&gt;Peek-a-boo navigation bars. “Turn off your ad-blocker to see the content”. Pages that transition when you first load them. Sites that all try to look like Medium. Loading screens. Fixed navigation that looks like cookie warnings. Full window autoplaying video. An input-field with the URL underneath an article. Disabled zooming on mobile.&lt;/p&gt;
+
+&lt;p&gt;And of course: Social sharing icons. Carousels. Please download our app. Endless scrolling. Loading screens, seriously? Still? Fixed-width websites. Only being able to login with Facebook. 7 things you probably didn’t know about sharks. Low contrast text.&lt;/p&gt;
+
+&lt;p&gt;Please.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Jul 2014 15:31:51 +0200</pubDate>
+        <link>http://blog.frozenrockets.nl/stop-doing-this</link>
+        <guid isPermaLink="true">http://blog.frozenrockets.nl/stop-doing-this</guid>
+      </item>
+    
+      <item>
+        <title>Difficult doesn&#39;t need to be complex</title>
+        <description>&lt;p&gt;About 2 months ago I had the pleasure of attending the Beyond Tellerrand conference in Düsseldorf and watching many great talks by Ethan Marcotte, Erik Spiekermann, Jessica Hische and others. The one that stood out to me, was Stephen Hay’s talk titled Maintaining Simplicity.&lt;/p&gt;
+
+&lt;p&gt;A great way to achieve simplicity and one of the key principles in his work and in this talk is the &lt;em&gt;Zero Interface&lt;/em&gt;, the concept where there is no interface between the user and the goal she is trying to accomplish. Whatever the user thinks of, with the snap of a finger the result is there. Think Amazon 1-Click without even clicking a button. This hypothetical (and perhaps ideal) interface can help us reduce complexity in the interfaces we design when we remember that “&lt;em&gt;anything you add to the zero interface is perhaps one step too many&lt;/em&gt;” (from &lt;a href=&quot;http://responsivedesignworkflow.com&quot;&gt;Responsive Design Workflow&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;I love this concept, because it forces us to make things as simple as possible. Somehow there’s a misconception that designing a simple interface is easier and takes less work than making something complex. It’s true that most complex interfaces are the result of years of work and new implementations, but obviously not a lot of work has gone into thinking and considering each addition to the interface.&lt;/p&gt;
+
+&lt;h2 id=&quot;difficult-vs-complex&quot;&gt;Difficult vs. Complex&lt;/h2&gt;
+
+&lt;p&gt;When making the distinction between something difficult and something complicated, I like the Marathon Analogy: Running a marathon is very difficult, it takes a lot of training and you’ll  feel exhausted when you cross the finishline, but it’s not complicated; Just put one foot in front of the other. For 42 kilometers.&lt;/p&gt;
+
+&lt;p&gt;If you have to do something difficult, at least make it simple to do it. This is true for running marathons and it’s also true for interfaces. I’ve worked on a project where the best regarded content managers were the ones who actually knew how to operate the CMS. It felt like a badge of honor to them. That’s just crazy!&lt;/p&gt;
+
+&lt;p&gt;As Stephen mentioned in &lt;a href=&quot;https://speakerdeck.com/stephenhay/the-zero-interface-using-zero-based-thinking-to-maintain-simplicity-fowd-london-2014&quot;&gt;his talk&lt;/a&gt;: “&lt;em&gt;Simple doesn’t mean stupid (and complex doesn’t mean smart)&lt;/em&gt;.”&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Jul 2014 15:31:51 +0200</pubDate>
+        <link>http://blog.frozenrockets.nl/difficult-doesnt-need-to-be-complex</link>
+        <guid isPermaLink="true">http://blog.frozenrockets.nl/difficult-doesnt-need-to-be-complex</guid>
+      </item>
+    
+      <item>
+        <title>Adding ARIA landmark roles to my site</title>
+        <description>&lt;p&gt;I recently launched my new website along with a new visual identity. I left some work to be done on purpose, so I could document these enhancements afterwards. This first step is to add WAI-ARIA roles to the site to further improve the usability for visitors who use assistive technologies.&lt;/p&gt;
+
+&lt;h2 id=&quot;but-first-what-is-wai-aria&quot;&gt;But first, what is WAI-ARIA?&lt;/h2&gt;
+
+&lt;p&gt;WAI-ARIA (which I’ll call ARIA from now on) is short for ‘Web Accessibility Initiative – Accessible Rich Internet Applications’. It is a set of attributes that can be added as a layer on top of HTML to provide extra information about the semantics of the site to screen readers and other assistive technologies. Among other things, ARIA enhances accessibility of interactive controls (such as drag and drop and sliders), provides roles for page structure (“landmarks” for navigation, search and main content) and areas for dynamic content (called “live regions” in ARIA).&lt;/p&gt;
+
+&lt;h2 id=&quot;about-adding-aria-roles&quot;&gt;About adding ARIA roles&lt;/h2&gt;
+
+&lt;p&gt;First of all, let’s start with &lt;a href=&quot;http://www.w3.org/TR/aria-in-html/#first-rule-of-aria-use&quot;&gt;the first rule of ARIA&lt;/a&gt;: “The first rule of ARIA, is don’t use ARIA.”
+If you can use a native HTML element or attribute with the semantics and behaviour you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.&lt;/p&gt;
+
+&lt;p&gt;So, that’s what I did, of course, and I hope everyone does.
+This site uses structural elements like &amp;lt;header&amp;gt; and &amp;lt;main&amp;gt; and it doesn’t have that many interactions. There’s a navigation menu, a contactform and some links, nothing really exiting. &lt;/p&gt;
+
+&lt;p&gt;That’s why I’ll only focus on ARIA Landmarks in this article.&lt;/p&gt;
+
+&lt;h2 id=&quot;low-hanging-fruit&quot;&gt;Low hanging fruit&lt;/h2&gt;
+
+&lt;p&gt;This is what the site looks like now:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://blog.frozenrockets.nl/assets/screenshot-frozenrockets-about.png&quot; alt=&quot;Screenshot of the Frozen Rockets about page&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s start with the quick wins. Since HTML5 provided us with new structural elements, there is some clear overlap between ARIA roles and native HTML.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://html5doctor.com/the-main-element/&quot;&gt;&lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt; element&lt;/a&gt; is the main content of the page (for this page it would contain this article) and it should only be used once in a document. This directly maps to the &lt;em&gt;main&lt;/em&gt;-role in ARIA and in the future you wouldn’t have to use this role if you use &lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt;, but because of the lack of support in Internet Explorer and some of the mobile browsers and to maximize compatibility, we’ll add it like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;main&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;main&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next up is the &lt;em&gt;sidebar&lt;/em&gt;, which contains the logo, a large background image and a navigation menu. This sidebar is a &lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt; element and it’s site-oriented, rather than page-specific. The ARIA role to use for this is the &lt;a href=&quot;http://www.w3.org/TR/wai-aria/roles#banner&quot;&gt;&lt;em&gt;banner&lt;/em&gt;&lt;/a&gt;, a banner usually appears at the top of the page and typically spans the full width, but in this case it sits next to the content (on desktop).&lt;/p&gt;
+
+&lt;p&gt;Like the &lt;em&gt;main&lt;/em&gt;-role, a banner should only mark one element in the document, so that makes it:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;banner&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;sidebar&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;navigation&quot;&gt;Navigation&lt;/h2&gt;
+
+&lt;p&gt;Let’s look a the navigation now. There’s a navigation menu in the bottom-left corner and some links to deeper-lying pages. The bottom-left navigation is an obvious candidate for the &lt;em&gt;navigation&lt;/em&gt;-role, which represents a collection of navigational elements (usually links) for navigating the document or related documents. It maps to the HTML &lt;code&gt;&amp;lt;nav&amp;gt;&lt;/code&gt; element, so that makes it:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;nav&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;navigation&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;ol&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./projects&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Projects&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./about&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;About Frozen Rockets&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;http://blog.frozenrockets.nl&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Articles&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./contact.php&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Contact&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ol&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/nav&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The navigation landmark can be used more than once on a page, but don’t overdo it. Not any list of links is a navigation landmark, just like you probably wouldn’t wrap it in a &lt;code&gt;&amp;lt;nav&amp;gt;&lt;/code&gt;-element. &lt;/p&gt;
+
+&lt;p&gt;With these roles in place, the main structure of the pages is done.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://blog.frozenrockets.nl/assets/screenshot-frozenrockets-about-aria-roles.png&quot; alt=&quot;Screenshot of the Frozen Rockets about page with ARIA-roles in place&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;that-leaves-us-with&quot;&gt;That leaves us with&lt;/h2&gt;
+
+&lt;p&gt;With the low hanging fruit out of the way, there are still 4 other roles left to consider:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Contentinfo&lt;/li&gt;
+  &lt;li&gt;Complementary&lt;/li&gt;
+  &lt;li&gt;Form&lt;/li&gt;
+  &lt;li&gt;Search&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;search&quot;&gt;Search&lt;/h3&gt;
+
+&lt;p&gt;I’ll start with the easy one: &lt;em&gt;Search&lt;/em&gt; (role=search). As you probably guessed, this is for forms that let you search or filter the content on the site. There is nothing like that on the site, so I’ll skip that one.&lt;/p&gt;
+
+&lt;h3 id=&quot;contentinfo&quot;&gt;Contentinfo&lt;/h3&gt;
+
+&lt;p&gt;The spec says: “A large perceivable region that contains information about the parent document.Examples of information included in this region of the page are copyrights and links to privacy statements.”&lt;/p&gt;
+
+&lt;p&gt;I don’t have a footer on the site that might contain this info, but there is &lt;a href=&quot;http://frozenrockets.nl/credits&quot;&gt;a page that I link to from the homepage with copyright information&lt;/a&gt;. I’ll apply this role to the link on the homepage like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./credits&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;role=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;contentinfo&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Credits&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;complementary&quot;&gt;Complementary&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.w3.org/TR/wai-aria/roles#complementary&quot;&gt;According to the spec&lt;/a&gt;, this is “a supporting section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.” Pretty much the same as the &lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
+
+&lt;p&gt;I don’t have anything like that on my site right now, so I can skip that.&lt;/p&gt;
+
+&lt;h3 id=&quot;form&quot;&gt;Form&lt;/h3&gt;
+
+&lt;p&gt;“A landmark region that contains a collection of items and objects that, as a whole, combine to create a form.” The most obvious thing to do is just add the role to any form on your site, but the semantics for this role already apply to the &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt;-element, so that would be redundant. If (and you probably shouldn’t) you don’t use the native &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt;-element for a form, this role would be applied to the containing &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;done&quot;&gt;Done&lt;/h2&gt;
+
+&lt;p&gt;With the ARIA-roles in place, I’ve made my website a bit more accessible. There is some work left for the contactform, which I’ll leave for a next article about ARIA states.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 23 Jun 2014 16:24:00 +0200</pubDate>
+        <link>http://blog.frozenrockets.nl/adding-aria-to-this-site</link>
+        <guid isPermaLink="true">http://blog.frozenrockets.nl/adding-aria-to-this-site</guid>
+      </item>
+    
+      <item>
+        <title>Customizing your HTML5 form validation messages</title>
+        <description>&lt;p&gt;Using the &lt;em&gt;title&lt;/em&gt;-attribute for input-fields is, of course, recommended when you want to provide your visitors with some extra information besides the text in the &amp;lt;label&amp;gt;, something like ‘Please enter your full name’ would be a lot more useful and accessible than just asking for “Name”.&lt;/p&gt;
+
+&lt;p&gt;I noticed not many people are aware of this extra feature of the title-attribute, but if you use the &lt;em&gt;title&lt;/em&gt;-attribute, this text will also appear in the error message when you use HTML5 form validation (which you do use, right?).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;
+	Name
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Please enter your full name&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Unfortunately, this doesn’t work in Firefox, but you can easily fix that with the non-standard x-moz-errormessage attribute:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;label&amp;gt;&lt;/span&gt;
+	Name
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; 	&lt;span class=&quot;na&quot;&gt;required&lt;/span&gt; 
+		&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; 
+		&lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Please enter your full name&amp;quot;&lt;/span&gt; 
+		&lt;span class=&quot;na&quot;&gt;x-moz-errormessage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Please enter your full name&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This works across modern browsers (Chrome, Firefox, Opera and IE 10+), let’s hope Safari 8 joins the party this fall.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Jun 2014 00:03:46 +0200</pubDate>
+        <link>http://blog.frozenrockets.nl/customizing-your-html5-form-validation-messages</link>
+        <guid isPermaLink="true">http://blog.frozenrockets.nl/customizing-your-html5-form-validation-messages</guid>
+      </item>
     
       <item>
         <title>The new face of Frozen Rockets</title>
