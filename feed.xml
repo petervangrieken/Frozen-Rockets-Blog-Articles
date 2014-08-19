@@ -7,6 +7,60 @@
     <atom:link href="http://blog.frozenrockets.nl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Tablet first is not really a thing, right?</title>
+        <description>&lt;p&gt;I work for a large variety of companies and agencies and one of the things I keep hearing, is something they call &lt;em&gt;Tablet First Design&lt;/em&gt;. Especially design agencies seem to sell this as a genuine approach. I first heard about &lt;em&gt;Tablet First&lt;/em&gt; about 2 years ago, but it seems to gain more traction lately and I wonder what it means.&lt;/p&gt;
+
+&lt;p&gt;This &lt;em&gt;Tablet First&lt;/em&gt; approach is derived from &lt;em&gt;Mobile First&lt;/em&gt;, the title of &lt;a href=&quot;http://www.abookapart.com/products/mobile-first&quot;&gt;Luke Wroblewski’s book for A Book Apart&lt;/a&gt; and the name of the principle he coined. Mobile First is a design approach where you start with designing for &lt;em&gt;mobile&lt;/em&gt; (small screens) and utilizing the device’s capabilities. The reasoning behind this approach is that the contraints force you to focus on what’s necessary for the user to achieve his task. That way you get rid of all the unnecessary cruft that you normally see on websites.&lt;/p&gt;
+
+&lt;p&gt;Before Mobile First came along &lt;a href=&quot;http://www.hesketh.com/thought-leadership/our-publications/progressive-enhancement-and-future-web-design&quot;&gt;Progressive Enhancement was mostly a technical thing&lt;/a&gt;, but Luke took it a step further and applied these principles to design as well. Serve &lt;em&gt;mobile&lt;/em&gt; users with the best version of the site for mobile and build upon this for devices with more capabilities.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-tablet-first&quot;&gt;What is tablet first?&lt;/h2&gt;
+
+&lt;p&gt;When compared to smartphones, tablets have 3 important characteristics in common: touchscreens, sensors and portability. Just like for smartphones these characteristics are not binary; it’s not a matter of true/false and yes or no,  each device has varying support levels. a Samsung Note is more portable than an iPad Mini, which is more portable than a Surface. The same goes for screens, from black-and-white resistive touchscreens to 4k screens. These traits are &lt;a href=&quot;http://adactio.com/journal/6692/&quot;&gt;inherent to the web as a continuum&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So to serve tablets with a &lt;em&gt;Tablet First&lt;/em&gt; design, we have to consider the unpredictable nature of the web and the best way to do that is by using progressive enhancement. Start with designing for the least capable devices, and build upon this when possible and necessary.&lt;/p&gt;
+
+&lt;p&gt;Optimizing for tablets does not mean optimizing for the iPad Air. A &lt;em&gt;tablet user&lt;/em&gt; might just as well be an e-book reader with a black-and-white screen and a low refresh rate.&lt;/p&gt;
+
+&lt;h3 id=&quot;is-it-the-screen&quot;&gt;Is it the screen?&lt;/h3&gt;
+
+&lt;p&gt;Tablets tend to have smaller screens than desktop computers (except &lt;a href=&quot;http://www.laptopmag.com/reviews/tablets/toshibaexcite13&quot;&gt;sometimes they don’t&lt;/a&gt;). So it might be a layout that’s built for a 1024x768 resolution, which is the resolution for iPads, but that’s not &lt;em&gt;Tablet First&lt;/em&gt;, that’s &lt;em&gt;iPad First&lt;/em&gt;. Or &lt;em&gt;2005 First&lt;/em&gt; because not that long ago we were all designind for was the most common resolution for desktop computers. I don’t think screen size is a good criterium as long as nobody can tell me if this &lt;a href=&quot;http://www.sonymobile.com/nl/products/phones/xperia-z-ultra/&quot;&gt;6.4” Sony Experia&lt;/a&gt; is a phone or a tablet.&lt;/p&gt;
+
+&lt;p&gt;So maybe it’s optimizing for touchscreens.&lt;/p&gt;
+
+&lt;p&gt;But what does that mean? Big hit-areas for links and buttons to make it touch-friendly? You could easily call that &lt;a href=&quot;https://signalvnoise.com/posts/1048-padded-link-targets-for-better-mousing&quot;&gt;basic usability&lt;/a&gt;. It was already recommended before the iPad was unveiled.&lt;/p&gt;
+
+&lt;p&gt;Ok, so it’s not about screens then.&lt;/p&gt;
+
+&lt;h3 id=&quot;sensors-then&quot;&gt;Sensors then?&lt;/h3&gt;
+
+&lt;p&gt;So it might be about GPS, accelerometers, luminosity sensors and all these other cool things that are built into smartphones and tablets. As we’ve seen before the web is an unpredictable medium. You can’t rely on these sensors to be present, so you need to have a fallback, or rather enhance when they are present.&lt;/p&gt;
+
+&lt;p&gt;I don’t see this being any different for tablets than it is for mobile or even desktop.&lt;/p&gt;
+
+&lt;h3 id=&quot;it-must-be-the-portability-then&quot;&gt;It must be the portability then.&lt;/h3&gt;
+
+&lt;p&gt;The portability of tablets effects its usage in 2 ways. You can 1) take it with you so you can use the GPS for location-based functionality and 2) you can hold it in your hands which can be used to create a ”submersive experience”.&lt;/p&gt;
+
+&lt;p&gt;The first effect is already discussed in the previous section. The second one is not that different from phones or dektops. If you disagree I advise you to look around in public transportation, most people are looking at their phones. How’s that for submersive?&lt;/p&gt;
+
+&lt;h2 id=&quot;so-whats-left&quot;&gt;So what’s left?&lt;/h2&gt;
+
+&lt;p&gt;One of the biggest advantages of &lt;em&gt;Mobile First&lt;/em&gt; are the constraints. They force you to focus on the actual content and the primary goal of a page. Just like Stephen Hay mentions in his book &lt;a href=&quot;http://responsivedesignworkflow.com/&quot;&gt;Responsive Design Workflow&lt;/a&gt; ’start designing from the content out’.&lt;/p&gt;
+
+&lt;p&gt;Mobile First is not about layout, but it’s about designing &lt;em&gt;Content First&lt;/em&gt; and progressive enhancement.&lt;/p&gt;
+
+&lt;p&gt;I don’t see how Tablet First adds anything to that approach. If it’s about designing for smaller than 1600x1200 and large hit-areas, we already have a name for that:&lt;/p&gt;
+
+&lt;p&gt;It’s called web design.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 05 Aug 2014 20:05:01 +0200</pubDate>
+        <link>http://blog.frozenrockets.nl/tablet-first-is-not-a-thing</link>
+        <guid isPermaLink="true">http://blog.frozenrockets.nl/tablet-first-is-not-a-thing</guid>
+      </item>
+    
+      <item>
         <title>Please stop doing this</title>
         <description>&lt;p&gt;Please stop with: This is a 2 minute read. Scroll hijacking. Seemingly randomly arranged blocks with photos. “Hamburger”-icons. “Hamburger”-icons on desktopsites. “Hamburger”-icons with a popup to explain. Loooooooong single-page sites. Any single-page site. Full window parallax scrolling images.&lt;/p&gt;
 
