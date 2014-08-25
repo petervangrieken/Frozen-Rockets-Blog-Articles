@@ -7,6 +7,43 @@
     <atom:link href="http://blog.frozenrockets.nl/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>99% of my clients don&#39;t ask for an accessible website, they just get one.</title>
+        <description>&lt;p&gt;Accessibility still seems to be one of those things most designers and developers don’t want to think about. WAI Aria is a W3C Reccomendation since March of this year, but most websites I see don’t use Landmark roles, let alone Live Regions. And somehow, many developers don’t even care about semantic HTML anymore.&lt;/p&gt;
+
+&lt;p&gt;I’m not sure if it’s just lazyness or that designers and developers see accessibility as an annoying constraint, but I guess it’s a combination of both. Just like testing a website in Internet Explorer is an annoyance, so is testing it with a screen reader. &lt;/p&gt;
+
+&lt;p&gt;For some reason making websites accessible is still seen as something you do for &lt;em&gt;that one blind guy&lt;/em&gt;, but designing an accessible website means you design it for everybody. That includes &lt;a href=&quot;https://the-pastry-box-project.net/anne-gibson/2014-july-31&quot;&gt;your grandma who needs her reading glasses, a co-worker who broke his arm and your colorblind girlfriend&lt;/a&gt;, but also that person who tries to access you site on hotel wifi. That means readable text, keyboard navigation, underlined links and a site that works when Javascript fails to load.&lt;/p&gt;
+
+&lt;p&gt;Although I have worked on several government websites, which are obliged to comply with &lt;a href=&quot;http://www.webrichtlijnen.nl/english/what-and-why/regulatory&quot;&gt;the Dutch Web Guidelines&lt;/a&gt; (WCAG 2.0), most of the accessibility work I do is for projects where it’s not one of the requirements. Most of my clients don’t even know. Or care, to be honest.&lt;/p&gt;
+
+&lt;p&gt;I guess for many designers this lack of care translates to not having to care about it themselves. Most clients don’t give a damn if I use &lt;a href=&quot;/adding-aria-to-this-site/&quot;&gt;ARIA Roles&lt;/a&gt; or not or if choose to make something a &amp;lt;button&amp;gt; or an &amp;lt;a&amp;gt;, so I see this as a opportunity to do as much as I can to make it accessible.&lt;/p&gt;
+
+&lt;h2 id=&quot;doesnt-it-take-more-time&quot;&gt;Doesn’t it take more time?&lt;/h2&gt;
+
+&lt;p&gt;Sure, sometimes. Sometimes you need to do some extra work to make sure an element is &lt;em&gt;hoverable&lt;/em&gt;, or to do an extra check for color contrasts, but in my experience most issues can be resolved by just designing responsibly: using the correct HTML, picking a proper font size, making sure text zoom works, etc.&lt;/p&gt;
+
+&lt;p&gt;I know I lost years of my life debugging weird bugs in &lt;abbr title=&quot;Internet Explorer&quot;&gt;IE&lt;/abbr&gt;, sometimes things just take time. I consider it part of the job. At least making a client’s site more accessible is a much nicer and more gratifying part of the job.&lt;/p&gt;
+
+&lt;h2 id=&quot;alright-you-got-me-now-what&quot;&gt;Alright, you got me, now what?&lt;/h2&gt;
+
+&lt;p&gt;These are some of the tools I use to make my work a little easier. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb&quot;&gt; Accessibility Developer Tools&lt;/a&gt; (Chrome plugin)&lt;/strong&gt;, checks things like color contrast;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;VoiceOver (Mac)&lt;/strong&gt; is built in to OS X and a great way to see how your site is read by a screen reader;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;http://squizlabs.github.io/HTML_CodeSniffer/&quot;&gt;HTML_CodeSniffer&lt;/a&gt; (Bookmarklet)&lt;/strong&gt;, a nice bookmarklet to check different conformance levels;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;http://heydonworks.com/revenge_css_bookmarklet/&quot;&gt;Revenge.css&lt;/a&gt; (Bookmarklet)&lt;/strong&gt;, this bookmarklet will make it painfully clear where your site needs improvement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once you include these tools into your workflow, you’ll see there are many quick-wins. Just start picking the low-hanging fruit and you’ll soon be making better websites without thinking about it. So please, designers and developers, I ask you to stop making a distinction between accessibility projects and &lt;em&gt;regular&lt;/em&gt; projects. If you make every website as accessible as possible, we all benefit.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 07 Aug 2014 08:50:00 +0200</pubDate>
+        <link>http://blog.frozenrockets.nl/clients-dont-ask-for-accessibility</link>
+        <guid isPermaLink="true">http://blog.frozenrockets.nl/clients-dont-ask-for-accessibility</guid>
+      </item>
+    
+      <item>
         <title>Tablet first is not really a thing, right?</title>
         <description>&lt;p&gt;I work for a large variety of companies and agencies and one of the things I keep hearing, is something they call &lt;em&gt;Tablet First Design&lt;/em&gt;. Especially design agencies seem to sell this as a genuine approach. I first heard about &lt;em&gt;Tablet First&lt;/em&gt; about 2 years ago, but it seems to gain more traction lately and I wonder what it means.&lt;/p&gt;
 
@@ -24,11 +61,11 @@
 
 &lt;h3 id=&quot;is-it-the-screen&quot;&gt;Is it the screen?&lt;/h3&gt;
 
-&lt;p&gt;Tablets tend to have smaller screens than desktop computers (except &lt;a href=&quot;http://www.laptopmag.com/reviews/tablets/toshibaexcite13&quot;&gt;sometimes they don’t&lt;/a&gt;). So it might be a layout that’s built for a 1024x768 resolution, which is the resolution for iPads, but that’s not &lt;em&gt;Tablet First&lt;/em&gt;, that’s &lt;em&gt;iPad First&lt;/em&gt;. Or &lt;em&gt;2005 First&lt;/em&gt; because not that long ago we were all designind for was the most common resolution for desktop computers. I don’t think screen size is a good criterium as long as nobody can tell me if this &lt;a href=&quot;http://www.sonymobile.com/nl/products/phones/xperia-z-ultra/&quot;&gt;6.4” Sony Experia&lt;/a&gt; is a phone or a tablet.&lt;/p&gt;
+&lt;p&gt;Tablets tend to have smaller screens than desktop computers (except &lt;a href=&quot;http://www.laptopmag.com/reviews/tablets/toshibaexcite13&quot;&gt;sometimes they don’t&lt;/a&gt;). So it might be a layout that’s built for a 1024x768 resolution, which is the resolution for iPads, but that’s not &lt;em&gt;Tablet First&lt;/em&gt;, that’s &lt;em&gt;iPad First&lt;/em&gt;. Or &lt;em&gt;2005 First&lt;/em&gt; because not that long ago we were all designing for was the most common resolution for desktop computers. I don’t think screen size is a good criterium as long as nobody can tell me if this &lt;a href=&quot;http://www.sonymobile.com/nl/products/phones/xperia-z-ultra/&quot;&gt;6.4” Sony Experia&lt;/a&gt; is a phone or a tablet.&lt;/p&gt;
 
 &lt;p&gt;So maybe it’s optimizing for touchscreens.&lt;/p&gt;
 
-&lt;p&gt;But what does that mean? Big hit-areas for links and buttons to make it touch-friendly? You could easily call that &lt;a href=&quot;https://signalvnoise.com/posts/1048-padded-link-targets-for-better-mousing&quot;&gt;basic usability&lt;/a&gt;. It was already recommended before the iPad was unveiled.&lt;/p&gt;
+&lt;p&gt;But what does that mean? Big hit-areas for links and buttons to make it touch-friendly? You could easily call that &lt;a href=&quot;https://signalvnoise.com/posts/1048-padded-link-targets-for-better-mousing&quot;&gt;basic usability&lt;/a&gt;. It was already recommended before the iPad was unveiled. If anything, I’d call it touch-friendly.&lt;/p&gt;
 
 &lt;p&gt;Ok, so it’s not about screens then.&lt;/p&gt;
 
